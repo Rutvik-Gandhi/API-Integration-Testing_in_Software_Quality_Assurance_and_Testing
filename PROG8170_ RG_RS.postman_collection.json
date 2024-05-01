@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "591a6d84-44cb-45e2-9f41-c496bfe009ed",
+		"name": "PROG8170_ RG_RS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25672691"
+	},
+	"item": [
+		{
+			"name": "Returns all airport in Airport DB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/airports",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"airports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Returns the airport specified by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/airports/KIX",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"airports",
+						"KIX"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Airport specified by ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/airports/distance?from=KIX&to=NRT",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"airports",
+						"distance"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "KIX"
+						},
+						{
+							"key": "to",
+							"value": "NRT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Returns the API token for the airport",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/tokens?email=test@airportgap.com&password=airportgappassword",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"tokens"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "test@airportgap.com"
+						},
+						{
+							"key": "password",
+							"value": "airportgappassword"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Returns all the favorite airports saved",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "W5oe8joA6Fze2hJJcSp3fxGt",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/favorites",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Returns the favorite airport from your Airport by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "W5oe8joA6Fze2hJJcSp3fxG",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/favorites?id=22",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"favorites"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Allow you to save the Airport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "W5oe8joA6Fze2hJJcSp3fxGt",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/favorites?airport_id=JFK",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"favorites"
+					],
+					"query": [
+						{
+							"key": "airport_id",
+							"value": "JFK"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Allow you to update the note of one of your favorite airport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "W5oe8joA6Fze2hJJcSp3fxGt",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/favorites/8915",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"favorites",
+						"8915"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete one of your favorite airport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "W5oe8joA6Fze2hJJcSp3fxGt",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/favorites/25",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"favorites",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clear all of your favorite airports",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "W5oe8joA6Fze2hJJcSp3fxGt",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/favorites/clear_all",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"favorites",
+						"clear_all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
